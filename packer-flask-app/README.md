@@ -4,19 +4,33 @@
 File hierarchy
 
 ├── flask-app.json
+
 ├── flask.sh
+
 ├── helloworld
+
 │   ├── app
+
 │   │   ├── __init__.py
+
 │   │   ├── __pycache__
+
 │   │   │   ├── __init__.cpython-310.pyc
+
 │   │   │   └── __init__.cpython-38.pyc
+
 │   │   └── templates
+
 │   │       ├── base.html
+
 │   │       └── index.html
+
 │   ├── __pycache__
+
 │   │   └── startup.cpython-310.pyc
+
 │   └── startup.py
+
 └── README.md
 
 File details:
