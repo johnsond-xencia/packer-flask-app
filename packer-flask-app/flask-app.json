@@ -1,0 +1,41 @@
+{
+    "builders": [{
+      
+    "type": "azure-arm",
+    "location": "eastus",
+    "os_type": "Linux",
+    "image_publisher": "Canonical",
+    "image_offer": "0001-com-ubuntu-server-focal-daily",
+    "image_sku": "20_04-daily-lts-gen2",
+    "image_version": "20.04.202211250",
+    "client_id": "5602e60a-2998-4b7b-949d-55a4b5cfb0a3",
+    "client_secret": "h838Q~3TVEfE_zx6kb4yLK5igVXrI5TKyOh5UaBT",
+    "tenant_id": "75f2a99b-01fd-48f2-ac60-d4a7a44fd0cc",
+    "subscription_id": "b1978fc9-e349-400e-aa03-8b1819e5b95c",
+    "ssh_password" : "oVYKxsfpyXUj4Npja4z6unjV6oH34P2e",
+    "managed_image_resource_group_name": "myResourceGroup",
+    "managed_image_name": "flask-app-1.1.0",
+ 
+    "vm_size": "Standard_DS2_v2",
+    "ssh_username": "ubuntu",
+
+    "shared_image_gallery_destination": {
+        "resource_group": "myResourceGroup",
+        "gallery_name": "johnson_gallery",
+        "image_name": "flask-app-image",
+        "image_version": "1.1.0",
+        "replication_regions": "eastus"
+      }
+    
+    }],
+    "provisioners": [{
+        "type": "file",
+        "source": "helloworld/",
+        "destination": "/home/ubuntu/"
+      },
+      {
+        "type": "shell",
+        "script": "flask.sh"
+      }
+    ]
+  }
